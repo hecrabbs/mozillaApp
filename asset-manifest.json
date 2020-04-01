@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/mozillaApp/static/css/main.69eda509.chunk.css",
-    "main.js": "/mozillaApp/static/js/main.e0394054.chunk.js",
-    "main.js.map": "/mozillaApp/static/js/main.e0394054.chunk.js.map",
+    "main.js": "/mozillaApp/static/js/main.5a68169c.chunk.js",
+    "main.js.map": "/mozillaApp/static/js/main.5a68169c.chunk.js.map",
     "runtime-main.js": "/mozillaApp/static/js/runtime-main.c43035a1.js",
     "runtime-main.js.map": "/mozillaApp/static/js/runtime-main.c43035a1.js.map",
     "static/css/2.de424728.chunk.css": "/mozillaApp/static/css/2.de424728.chunk.css",
     "static/js/2.68c8605c.chunk.js": "/mozillaApp/static/js/2.68c8605c.chunk.js",
     "static/js/2.68c8605c.chunk.js.map": "/mozillaApp/static/js/2.68c8605c.chunk.js.map",
     "index.html": "/mozillaApp/index.html",
-    "precache-manifest.d03645444ea22e6841a0182f81e779a5.js": "/mozillaApp/precache-manifest.d03645444ea22e6841a0182f81e779a5.js",
+    "precache-manifest.4c4388cbf783ca2d56de79dcf3ca6e7e.js": "/mozillaApp/precache-manifest.4c4388cbf783ca2d56de79dcf3ca6e7e.js",
     "service-worker.js": "/mozillaApp/service-worker.js",
     "static/css/2.de424728.chunk.css.map": "/mozillaApp/static/css/2.de424728.chunk.css.map",
     "static/css/main.69eda509.chunk.css.map": "/mozillaApp/static/css/main.69eda509.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.de424728.chunk.css",
     "static/js/2.68c8605c.chunk.js",
     "static/css/main.69eda509.chunk.css",
-    "static/js/main.e0394054.chunk.js"
+    "static/js/main.5a68169c.chunk.js"
   ]
 }
