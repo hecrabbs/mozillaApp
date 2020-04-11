@@ -2,10 +2,29 @@ import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
+<<<<<<< Updated upstream
 import Card from 'react-bootstrap/Card';
 import { searchArticles } from "./NewsApi";
 import NewsResults from "./NewsResults";
 import TwitterContainer from "./TwitterConainer";
+=======
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Container from "react-bootstrap/Container";
+import {
+  BrowserView,
+  MobileView,
+  isBrowser,
+  isMobile
+} from "react-device-detect";
+
+import { searchArticles } from "./NewsApi";
+import NewsResults from "./NewsApi";
+import TwitterContainer from "./TwitterConainer";
+import './Style.css';
+>>>>>>> Stashed changes
 
 function App() {
 
@@ -174,6 +193,7 @@ function App() {
     }
 
     return (
+<<<<<<< Updated upstream
       <form onSubmit={handleSubmit}>
         <br />
         <label>Candidate Name:</label>
@@ -182,6 +202,22 @@ function App() {
         <input type="text" name="secondCandidateName" onChange={handleInputChange} />
         <input type="submit" />
       </form>
+=======
+      <Form onSubmit={handleSubmit} >
+        <Form.Row>
+          <Col xs={6} sm={6} md={6}>
+            <Form.Group controlId="firstCandidate" className="Form">
+              <Form.Control type="text" name="firstCandidateName" placeholder="First Candidate Name" onChange={handleInputChange} />
+            </Form.Group></Col>
+          <Col xs={6} sm={6} md={6}>
+            <Form.Group controlId="secondCandidate" className="Form">
+              <Form.Control type="text" name="secondCandidateName" placeholder="Second Candidate Name" onChange={handleInputChange} />
+            </Form.Group></Col>
+        </Form.Row>
+        <Form.Row>
+          <Col><Button type="submit" className="Button" block>Submit</Button></Col></Form.Row>
+      </Form>
+>>>>>>> Stashed changes
     )
   }
 
@@ -191,27 +227,26 @@ function App() {
     if (firstSubmitted) {
       if (firstLoaded) {
         return (
-          <div>
-            {firstCandidate.candidate_id} <br />
-            {firstCandidate.name} <br />
-            {firstCandidate.party_full} <br /> <br />
-            Active Through: {firstCandidate.active_through} <br />
-            Address: {firstCandidate.address_street_1} <br />
-            City: {firstCandidate.address_city} <br />
-            State: {firstCandidate.address_state} <br /><br />
-            Date: {firstCandidateTotals.coverage_start_date}---{firstCandidateTotals.coverage_end_date}<br />
-            Disbursements: ${firstCandidateTotals.disbursements} <br />
-            Receipts: ${firstCandidateTotals.receipts} <br /><br />
-            Presidential Committee: {firstCandidateCommittee.name} <br /> <br />
-            Top Contributions: <br /> <br />
+          <div className="Content">
+            <b>{firstCandidate.party_full}</b> <br /> <br />
+            <b>Candidate ID: </b>{firstCandidate.candidate_id} <br />
+            <b>Active Through:</b> {firstCandidate.active_through} <br />
+            <b>Address:</b> {firstCandidate.address_street_1} <br />
+            <b>City:</b> {firstCandidate.address_city} <br />
+            <b>State:</b> {firstCandidate.address_state} <br /><br />
+            <b>Date:</b> {firstCandidateTotals.coverage_start_date}---{firstCandidateTotals.coverage_end_date}<br />
+            <b>Disbursements:</b> ${firstCandidateTotals.disbursements} <br />
+            <b>Receipts:</b> ${firstCandidateTotals.receipts} <br /><br />
+            <b>Presidential Committee:</b> {firstCandidateCommittee.name} <br /> <br />
+            <b>Top Contributions:</b> <br /> <br />
             {firstCandidateTopContributions.map(contributor => (
               <li key={contributor.sub_id}>{contributor.contributor_name}: ${contributor.contribution_receipt_amount}<br />{contributor.contributor_occupation}</li>
             ))} <br /> <br />
-            Top Individual Contributions: <br /> <br />
+            <b>Top Individual Contributions:</b> <br /> <br />
             {firstCandidateTopIndividualContributions.map(contributor => (
               <li key={contributor.sub_id}>{contributor.contributor_name}: ${contributor.contribution_receipt_amount}<br />{contributor.contributor_occupation}</li>
             ))} <br /> <br />
-            News: <br /><br />
+            <b>News:</b> <br /><br />
             <NewsResults results={firstNewsResults} />
           </div>
         )
@@ -222,7 +257,7 @@ function App() {
       }
     } else {
       return (
-        <div>Search For a Candidate Above.</div>
+        <div className="Content" style={{ textAlign: 'center' }}>Search For a Candidate Above.</div>
       )
     }
   }
@@ -231,27 +266,26 @@ function App() {
     if (secondSubmitted) {
       if (secondLoaded) {
         return (
-          <div>
-            {secondCandidate.candidate_id} <br />
-            {secondCandidate.name} <br />
-            {secondCandidate.party_full} <br /> <br />
-            Active Through: {secondCandidate.active_through} <br />
-            Address: {secondCandidate.address_street_1} <br />
-            City: {secondCandidate.address_city} <br />
-            State: {secondCandidate.address_state} <br /> <br />
-            Date: {secondCandidateTotals.coverage_start_date}---{secondCandidateTotals.coverage_end_date}<br />
-            Disbursements: ${secondCandidateTotals.disbursements} <br />
-            Receipts: ${secondCandidateTotals.receipts} <br /> <br />
-            Presidential Committee: {secondCandidateCommittee.name} <br /> <br />
-            Top Contributions: <br /> <br />
+          <div className="Content">
+            <b>{secondCandidate.party_full}</b> <br /> <br />
+            <b>Candidate ID: </b>{secondCandidate.candidate_id} <br />
+            <b>Active Through:</b> {secondCandidate.active_through} <br />
+            <b>Address:</b> {secondCandidate.address_street_1} <br />
+            <b>City:</b> {secondCandidate.address_city} <br />
+            <b>State:</b> {secondCandidate.address_state} <br /> <br />
+            <b>Date:</b> {secondCandidateTotals.coverage_start_date}---{secondCandidateTotals.coverage_end_date}<br />
+            <b>Disbursements:</b> ${secondCandidateTotals.disbursements} <br />
+            <b>Receipts:</b> ${secondCandidateTotals.receipts} <br /> <br />
+            <b>Presidential Committee:</b> {secondCandidateCommittee.name} <br /> <br />
+            <b>Top Contributions:</b> <br /> <br />
             {secondCandidateTopContributions.map(contributor => (
               <li key={contributor.sub_id}>{contributor.contributor_name}: ${contributor.contribution_receipt_amount}<br />{contributor.contributor_occupation}</li>
             ))} <br /> <br />
-            Top Individual Contributions: <br /> <br />
+            <b>Top Individual Contributions:</b> <br /> <br />
             {secondCandidateTopIndividualContributions.map(contributor => (
               <li key={contributor.sub_id}>{contributor.contributor_name}: ${contributor.contribution_receipt_amount}<br />{contributor.contributor_occupation}</li>
             ))}<br /> <br />
-            News: <br /><br />
+            <b>News:</b> <br /><br />
             <NewsResults results={secondNewsResults} />
           </div>
         )
@@ -262,11 +296,12 @@ function App() {
       }
     } else {
       return (
-        <div>Search For a Candidate Above.</div>
+        <div className="Content" style={{ textAlign: 'center' }}>Search For a Candidate Above.</div>
       )
     }
   }
 
+<<<<<<< Updated upstream
   return (
     <div className="App">
       <SearchBar />
@@ -293,8 +328,102 @@ function App() {
           <TwitterContainer />
         </Tab>
       </Tabs>
+=======
+
+
+
+  return (
+    <div className="App">
+      <BrowserView>
+        <Container fluid className="Header" >
+          <Row>
+            <Col sm={12} md={6} className="CenterVertically">
+              <Row >
+                <img alt="Logo" src={require("./JuxtaPollsLogo.png")} width="50" height="50" /> {' '}
+                <strong className="Title"><span style={{ color: 'blue' }}>JUXTA</span><span style={{ color: 'red' }}>POLLS</span></strong>
+              </Row>
+              <Row ><span>QUICKLY SEARCH AND COMPARE <b><i>THE FACTS</i></b> BETWEEN POLITICAL CANDIDATES</span>
+              </Row>
+            </Col>
+            <Col sm={12} md={{ size: 5, offset: 1 }} ><SearchBar /></Col>
+          </Row>
+        </Container>
+        <Container fluid>
+          <Row >
+            <Col md={6} xs={6} className="verticalLineRight">
+              <h3 className="BrowserTabs">{(() => {
+                if (firstLoaded) {
+                  return firstCandidate.name;
+                } else {
+                  return "First Candidate:";
+                }
+              })()}</h3>
+              <FirstTabResults /></Col>
+            <Col md={6} xs={6} className="verticalLineLeft">
+              <h3 className="BrowserTabs">{(() => {
+                if (secondLoaded) {
+                  return secondCandidate.name;
+                } else {
+                  return "Second Candidate:";
+                }
+              })()}</h3>
+              <SecondTabResults /></Col>
+
+          </Row>
+        </Container>
+      </BrowserView>
+
+      <MobileView>
+        <Container fluid className="Header" >
+          <Row>
+            <Col sm={12} md={6} className="CenterVertically">
+              <Row >
+                <img alt="Logo" src={require("./JuxtaPollsLogo.png")} width="50" height="50" /> {' '}
+                <strong className="Title"><span style={{ color: 'blue' }}>JUXTA</span><span style={{ color: 'red' }}>POLLS</span></strong>
+              </Row>
+              <Row ><span>QUICKLY SEARCH AND COMPARE <b><i>THE FACTS</i></b> BETWEEN POLITICAL CANDIDATES</span>
+              </Row>
+            </Col>
+            <Col sm={12} md={{ size: 5, offset: 1 }} ><SearchBar /></Col>
+          </Row>
+        </Container>
+        <Container fluid>
+          <Row ><Col sm={12} md={{ size: 6, offset: 3 }}>
+            <Tabs defaultActiveKey="firstCandidate" className="StickyTabs" >
+              <Tab eventKey="firstCandidate" title={(() => {
+                if (firstLoaded) {
+                  return <b>{secondCandidate.name}</b>;
+                } else {
+                  return "First Candidate";
+                }
+              })()}>
+                <FirstTabResults />
+              </Tab>
+              <Tab eventKey="secondCandidate" title={(() => {
+                if (secondLoaded) {
+                  return <b>{firstCandidate.name}</b>;
+                } else {
+                  return "Second Candidate";
+                }
+              })()}>
+                <SecondTabResults />
+              </Tab>
+              {/* <Tab eventKey="twitter" title="Twitter Test">
+                    <TwitterContainer />
+                  </Tab> */}
+            </Tabs>
+          </Col>
+            <Col sm="12" md={3}></Col>
+          </Row>
+        </Container>
+      </MobileView>
+>>>>>>> Stashed changes
     </div>
   );
+
+
+
+
 }
 
 export default App;
