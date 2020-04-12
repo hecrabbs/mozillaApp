@@ -290,7 +290,7 @@ function App() {
           <Row>
             <Col sm={12} md={6} className="CenterVertically">
               <Row >
-                <img alt="Logo" src={require("../public/JuxtaPollsLogo512.png")} width="50" height="50" /> {' '}
+                <img alt="Logo" src={require("./JuxtaPollsLogo512.png")} width="50" height="50" /> {' '}
                 <strong className="Title"><span style={{ color: 'blue' }}>JUXTA</span><span style={{ color: 'red' }}>POLLS</span></strong>
               </Row>
               <Row ><span>QUICKLY SEARCH AND COMPARE <b><i>THE FACTS</i></b> BETWEEN POLITICAL CANDIDATES</span>
@@ -329,7 +329,7 @@ function App() {
           <Row>
             <Col sm={12} md={6} className="CenterVertically">
               <Row >
-                <img alt="Logo" src={require("../public/JuxtaPollsLogo512.png")} width="50" height="50" /> {' '}
+                <img alt="Logo" src={require("./JuxtaPollsLogo512.png")} width="50" height="50" /> {' '}
                 <strong className="Title"><span style={{ color: 'blue' }}>JUXTA</span><span style={{ color: 'red' }}>POLLS</span></strong>
               </Row>
               <Row ><span>QUICKLY SEARCH AND COMPARE <b><i>THE FACTS</i></b> BETWEEN POLITICAL CANDIDATES</span>
@@ -343,7 +343,7 @@ function App() {
             <Tabs defaultActiveKey="firstCandidate" className="StickyTabs" >
               <Tab eventKey="firstCandidate" title={(() => {
                 if (firstLoaded) {
-                  return <b>{secondCandidate.name}</b>;
+                  return <b>{firstCandidate.name}</b>;
                 } else {
                   return "First Candidate";
                 }
@@ -352,7 +352,7 @@ function App() {
               </Tab>
               <Tab eventKey="secondCandidate" title={(() => {
                 if (secondLoaded) {
-                  return <b>{firstCandidate.name}</b>;
+                  return <b>{secondCandidate.name}</b>;
                 } else {
                   return "Second Candidate";
                 }
