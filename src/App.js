@@ -2,12 +2,6 @@ import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
-<<<<<<< Updated upstream
-import Card from 'react-bootstrap/Card';
-import { searchArticles } from "./NewsApi";
-import NewsResults from "./NewsResults";
-import TwitterContainer from "./TwitterConainer";
-=======
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
@@ -24,7 +18,6 @@ import { searchArticles } from "./NewsApi";
 import NewsResults from "./NewsApi";
 import TwitterContainer from "./TwitterConainer";
 import './Style.css';
->>>>>>> Stashed changes
 
 function App() {
 
@@ -193,16 +186,6 @@ function App() {
     }
 
     return (
-<<<<<<< Updated upstream
-      <form onSubmit={handleSubmit}>
-        <br />
-        <label>Candidate Name:</label>
-        <input type="text" name="firstCandidateName" onChange={handleInputChange} /> <br />
-        <label>Candidate Name: </label>
-        <input type="text" name="secondCandidateName" onChange={handleInputChange} />
-        <input type="submit" />
-      </form>
-=======
       <Form onSubmit={handleSubmit} >
         <Form.Row>
           <Col xs={6} sm={6} md={6}>
@@ -217,7 +200,6 @@ function App() {
         <Form.Row>
           <Col><Button type="submit" className="Button" block>Submit</Button></Col></Form.Row>
       </Form>
->>>>>>> Stashed changes
     )
   }
 
@@ -301,37 +283,6 @@ function App() {
     }
   }
 
-<<<<<<< Updated upstream
-  return (
-    <div className="App">
-      <SearchBar />
-      <Tabs defaultActiveKey="firstCandidate">
-        <Tab eventKey="firstCandidate" title={(() => {
-          if (firstLoaded) {
-            return firstCandidate.name;
-          } else {
-            return "First Candidate";
-          }
-        })()}>
-          <FirstTabResults />
-        </Tab>
-        <Tab eventKey="secondCandidate" title={(() => {
-          if (secondLoaded) {
-            return secondCandidate.name;
-          } else {
-            return "Second Candidate";
-          }
-        })()}>
-          <SecondTabResults />
-        </Tab>
-        <Tab eventKey="twitter" title="Twitter Test">
-          <TwitterContainer />
-        </Tab>
-      </Tabs>
-=======
-
-
-
   return (
     <div className="App">
       <BrowserView>
@@ -339,7 +290,7 @@ function App() {
           <Row>
             <Col sm={12} md={6} className="CenterVertically">
               <Row >
-                <img alt="Logo" src={require("./JuxtaPollsLogo.png")} width="50" height="50" /> {' '}
+                <img alt="Logo" src={require("../public/JuxtaPollsLogo512.png")} width="50" height="50" /> {' '}
                 <strong className="Title"><span style={{ color: 'blue' }}>JUXTA</span><span style={{ color: 'red' }}>POLLS</span></strong>
               </Row>
               <Row ><span>QUICKLY SEARCH AND COMPARE <b><i>THE FACTS</i></b> BETWEEN POLITICAL CANDIDATES</span>
@@ -378,7 +329,7 @@ function App() {
           <Row>
             <Col sm={12} md={6} className="CenterVertically">
               <Row >
-                <img alt="Logo" src={require("./JuxtaPollsLogo.png")} width="50" height="50" /> {' '}
+                <img alt="Logo" src={require("../public/JuxtaPollsLogo512.png")} width="50" height="50" /> {' '}
                 <strong className="Title"><span style={{ color: 'blue' }}>JUXTA</span><span style={{ color: 'red' }}>POLLS</span></strong>
               </Row>
               <Row ><span>QUICKLY SEARCH AND COMPARE <b><i>THE FACTS</i></b> BETWEEN POLITICAL CANDIDATES</span>
@@ -417,13 +368,8 @@ function App() {
           </Row>
         </Container>
       </MobileView>
->>>>>>> Stashed changes
     </div>
   );
-
-
-
-
 }
 
 export default App;
