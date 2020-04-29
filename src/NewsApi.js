@@ -20,6 +20,7 @@ function NewsResults(props) {
   };
   return (
     <div className="newsResults">
+      <b>News:</b> <br /><br />
       {props.results && props.results.map(article => (
         <Card key={article.url}>
           <Card.Body>
